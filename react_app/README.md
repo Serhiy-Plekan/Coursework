@@ -1,3 +1,5 @@
+[DEMO LINK](https://serhiy-plekan.github.io/Coursework/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
