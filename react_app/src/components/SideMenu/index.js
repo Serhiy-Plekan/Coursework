@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.scss";
 import burgerMenu from "../../assets/burger-menu.svg";
 import cross from "../../assets/cross.svg";
+import SideMenuContent from "./components/SideMenuContent";
 
 const SideMenu = () => {
   const [isOpened, setIsOpened] = useState(false);
@@ -42,6 +43,7 @@ const SideMenu = () => {
                 alt="cross icon"
                 onClick={closeSideMenu}
               />
+              <SideMenuContent />
             </div>
           </div>,
           document.getElementById("side-menu")
