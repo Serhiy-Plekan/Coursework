@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/Coursework/static/css/main.06fa0463.chunk.css",
-    "main.js": "/Coursework/static/js/main.e813db01.chunk.js",
-    "main.js.map": "/Coursework/static/js/main.e813db01.chunk.js.map",
+    "main.css": "/Coursework/static/css/main.16347abc.chunk.css",
+    "main.js": "/Coursework/static/js/main.d123935e.chunk.js",
+    "main.js.map": "/Coursework/static/js/main.d123935e.chunk.js.map",
     "runtime-main.js": "/Coursework/static/js/runtime-main.f743ab16.js",
     "runtime-main.js.map": "/Coursework/static/js/runtime-main.f743ab16.js.map",
-    "static/js/2.e9060d2e.chunk.js": "/Coursework/static/js/2.e9060d2e.chunk.js",
-    "static/js/2.e9060d2e.chunk.js.map": "/Coursework/static/js/2.e9060d2e.chunk.js.map",
+    "static/js/2.46318479.chunk.js": "/Coursework/static/js/2.46318479.chunk.js",
+    "static/js/2.46318479.chunk.js.map": "/Coursework/static/js/2.46318479.chunk.js.map",
     "index.html": "/Coursework/index.html",
-    "static/css/main.06fa0463.chunk.css.map": "/Coursework/static/css/main.06fa0463.chunk.css.map",
-    "static/js/2.e9060d2e.chunk.js.LICENSE.txt": "/Coursework/static/js/2.e9060d2e.chunk.js.LICENSE.txt"
+    "static/css/main.16347abc.chunk.css.map": "/Coursework/static/css/main.16347abc.chunk.css.map",
+    "static/js/2.46318479.chunk.js.LICENSE.txt": "/Coursework/static/js/2.46318479.chunk.js.LICENSE.txt",
+    "static/media/burger-menu.b6c4c0ac.svg": "/Coursework/static/media/burger-menu.b6c4c0ac.svg",
+    "static/media/cross.56920e02.svg": "/Coursework/static/media/cross.56920e02.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.f743ab16.js",
-    "static/js/2.e9060d2e.chunk.js",
-    "static/css/main.06fa0463.chunk.css",
-    "static/js/main.e813db01.chunk.js"
+    "static/js/2.46318479.chunk.js",
+    "static/css/main.16347abc.chunk.css",
+    "static/js/main.d123935e.chunk.js"
   ]
 }
