@@ -22,6 +22,8 @@ def linear_time_trend(user_data):
         preprocessed_data['b1'] = (preprocessed_data['average_y*t'] - preprocessed_data['average_data']*preprocessed_data['average_t'])/(preprocessed_data['average_t*t'] - preprocessed_data['average_t']**2)
         preprocessed_data['b2'] = preprocessed_data['average_data'] - preprocessed_data['b1']*preprocessed_data['average_t']
         preprocessed_data['linear'] = [preprocessed_data['b2'] + preprocessed_data['b1']*t for t in preprocessed_data['t']]
+        preprocessed_data['prediction'] = preprocessed_data['b2'] + preprocessed_data['b1'] * (preprocessed_data['t'][-1] + 1)
+
         preprocessed_data['correlation'] = (len(preprocessed_data['data'])*sum([preprocessed_data['data'][i]*preprocessed_data['linear'][i] for i in range(len(preprocessed_data['data']))]) - sum(preprocessed_data['data'])*sum(preprocessed_data['linear'])) / (
             (len(preprocessed_data['data'])*sum([i**2 for i in preprocessed_data['data']]) - (sum(preprocessed_data['data']))**2)*(len(preprocessed_data['linear'])*sum([i**2 for i in preprocessed_data['linear']]) - (sum(preprocessed_data['linear']))**2))**0.5
 
@@ -49,6 +51,7 @@ def logarithmic_time_trend(user_data):
         preprocessed_data['b1'] = (preprocessed_data['average_y*ln(t)'] - preprocessed_data['average_data']*preprocessed_data['average_ln(t)'])/(preprocessed_data['average_ln(t)*ln(t)'] - preprocessed_data['average_ln(t)']**2)
         preprocessed_data['b2'] = preprocessed_data['average_data'] - preprocessed_data['b1']*preprocessed_data['average_ln(t)']
         preprocessed_data['logarithmic'] = [preprocessed_data['b2'] + preprocessed_data['b1']*t for t in preprocessed_data['ln(t)']]
+        preprocessed_data['prediction'] = preprocessed_data['b2'] + preprocessed_data['b1'] * np.log((preprocessed_data['t'][-1] + 1))
         preprocessed_data['correlation'] = (len(preprocessed_data['data'])*sum([preprocessed_data['data'][i]*preprocessed_data['logarithmic'][i] for i in range(len(preprocessed_data['data']))]) - sum(preprocessed_data['data'])*sum(preprocessed_data['logarithmic'])) / (
             (len(preprocessed_data['data'])*sum([i**2 for i in preprocessed_data['data']]) - (sum(preprocessed_data['data']))**2)*(len(preprocessed_data['logarithmic'])*sum([i**2 for i in preprocessed_data['logarithmic']]) - (sum(preprocessed_data['logarithmic']))**2))**0.5
 
@@ -76,6 +79,7 @@ def hyperbolic_time_trend(user_data):
         preprocessed_data['b1'] = (preprocessed_data['average_y*1/t'] - preprocessed_data['average_data']*preprocessed_data['average_1/t'])/(preprocessed_data['average_1/t*1/t'] - preprocessed_data['average_1/t']**2)
         preprocessed_data['b2'] = preprocessed_data['average_data'] - preprocessed_data['b1']*preprocessed_data['average_1/t']
         preprocessed_data['hyperbolic'] = [preprocessed_data['b2'] + preprocessed_data['b1']*t for t in preprocessed_data['1/t']]
+        preprocessed_data['prediction'] = preprocessed_data['b2'] + preprocessed_data['b1'] * (1/(preprocessed_data['t'][-1] + 1))
         preprocessed_data['correlation'] = (len(preprocessed_data['data'])*sum([preprocessed_data['data'][i]*preprocessed_data['hyperbolic'][i] for i in range(len(preprocessed_data['data']))]) - sum(preprocessed_data['data'])*sum(preprocessed_data['hyperbolic'])) / (
             (len(preprocessed_data['data'])*sum([i**2 for i in preprocessed_data['data']]) - (sum(preprocessed_data['data']))**2)*(len(preprocessed_data['hyperbolic'])*sum([i**2 for i in preprocessed_data['hyperbolic']]) - (sum(preprocessed_data['hyperbolic']))**2))**0.5
 
