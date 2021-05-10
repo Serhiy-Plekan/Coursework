@@ -10,12 +10,17 @@ const SideMenu = () => {
   const [animationNameSlide, setAnimationNameSlide] = useState("");
   const [animationNameFade, setAnimationNameFade] = useState("");
 
-  const openSideMenu = () => setIsOpened(true);
+  const openSideMenu = () => {
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+    setIsOpened(true)
+  };
+
   const closeSideMenu = () => {
     setAnimationNameSlide("slide-close");
     setAnimationNameFade("fade-out");
 
     setTimeout(() => {
+      document.getElementsByTagName('body')[0].style.overflow = 'auto';
       setIsOpened(false);
       setAnimationNameSlide("");
       setAnimationNameFade("");
