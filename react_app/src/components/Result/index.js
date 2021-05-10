@@ -10,7 +10,7 @@ const Result = ({ serverData, selectedMethod }) => {
     },
     {
       name: selectedMethod,
-      data: serverData[selectedMethod],
+      data: serverData[selectedMethod] || serverData.result,
     },
   ];
 
@@ -43,15 +43,24 @@ const Result = ({ serverData, selectedMethod }) => {
         opacity: 0.5,
       },
     },
+    xaxis: {
+      labels: {
+        show: false,
+      },
+    },
     yaxis: {
       decimalsInFloat: 2,
     },
     markers: {
-      size: [7, 0]
-    }
+      size: [7, 0],
+    },
   };
 
-  return <Chart options={options} series={series} height={350} />;
+  return (
+    <div style={{ marginBottom: 35 }}>
+      <Chart options={options} series={series} height={350} />
+    </div>
+  );
 };
 
 export default Result;

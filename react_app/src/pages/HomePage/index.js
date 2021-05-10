@@ -3,6 +3,7 @@ import "./index.scss";
 import mainImage from "../../assets/main-image.svg";
 import DropZone from "../../components/DropZone";
 import Result from "../../components/Result";
+import Table from "../../components/Table";
 import axios from "axios";
 
 const options = [
@@ -24,6 +25,36 @@ const options = [
     text:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam amet gravida amet tortor eget mauris.",
   },
+  {
+    id: "smoothing",
+    name: "Smoothing",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam amet gravida amet tortor eget mauris.",
+  },
+  {
+    id: "without-three-smoothing",
+    name: "Without three smoothing",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam amet gravida amet tortor eget mauris.",
+  },
+  {
+    id: "without-five-smoothing",
+    name: "Without five smoothing",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam amet gravida amet tortor eget mauris.",
+  },
+  {
+    id: "with-three-smoothing",
+    name: "With three smoothing",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam amet gravida amet tortor eget mauris.",
+  },
+  {
+    id: "with-five-smoothing",
+    name: "With five smoothing",
+    text:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam amet gravida amet tortor eget mauris.",
+  },
 ];
 
 const HomePage = () => {
@@ -40,7 +71,7 @@ const HomePage = () => {
     const fileData = new FormData();
     fileData.append("file", file);
     axios
-      .post(`http://127.0.0.1:8000/api/${activeMethod}-trend/`, fileData)
+      .post(`http://127.0.0.1:8000/api/${activeMethod}/`, fileData)
       .then((response) => {
         if (response.data.error) return console.log(response.data.error);
         return response.data;
@@ -88,7 +119,13 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      {serverData && <Result serverData={serverData} selectedMethod={selectedMethod} />}
+      {serverData && (
+        <>
+          <h1 className="homepage__title">Результати</h1>
+          <Result serverData={serverData} selectedMethod={selectedMethod} />
+          <Table serverData={serverData} />
+        </>
+      )}
     </div>
   );
 };

@@ -161,16 +161,16 @@ def smoothing(smoothing_data):
         preprocessed_data['^b2'] = [(preprocessed_data['alpha']/(1-preprocessed_data['alpha']))*(preprocessed_data['s1'][i] 
             - preprocessed_data['s2'][i]) for i in range(len(preprocessed_data['s1']))]
 
-        preprocessed_data['smoothed'] = [preprocessed_data['^b1'][i] + preprocessed_data['^b2'][i] 
+        preprocessed_data['smoothing'] = [preprocessed_data['^b1'][i] + preprocessed_data['^b2'][i] 
             * preprocessed_data['m'] for i in range(len(preprocessed_data['^b1']))]
         preprocessed_data['prediction'] = preprocessed_data['^b1'][-1] + preprocessed_data['^b2'][-1]*amountOfPredicts
 
         preprocessed_data['correlation'] = (len(preprocessed_data['data'])
-            *sum([preprocessed_data['data'][i]*preprocessed_data['smoothed'][i] for i in range(len(preprocessed_data['data']))]) 
-            - sum(preprocessed_data['data'])*sum(preprocessed_data['smoothed'])) / (
+            *sum([preprocessed_data['data'][i]*preprocessed_data['smoothing'][i] for i in range(len(preprocessed_data['data']))]) 
+            - sum(preprocessed_data['data'])*sum(preprocessed_data['smoothing'])) / (
             (len(preprocessed_data['data'])*sum([i**2 for i in preprocessed_data['data']]) 
-            - (sum(preprocessed_data['data']))**2)*(len(preprocessed_data['smoothed'])
-            *sum([i**2 for i in preprocessed_data['smoothed']]) - (sum(preprocessed_data['smoothed']))**2))**0.5
+            - (sum(preprocessed_data['data']))**2)*(len(preprocessed_data['smoothing'])
+            *sum([i**2 for i in preprocessed_data['smoothing']]) - (sum(preprocessed_data['smoothing']))**2))**0.5
     return preprocessed_data
 
 

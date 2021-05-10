@@ -4,10 +4,10 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('linear-trend/', views.linearTrend, name='linear-trend'),
-    path('logarithmic-trend/', views.logarithmicTrend, name='logarithmic-trend'),
-    path('hyperbolic-trend/', views.hyperbolicTrend, name='hyperbolic-trend'),
-    path('smoothing-trend/', views.dataSmoothing, name='smoothing-trend'),
+    path('linear/', views.linearTrend, name='linear-trend'),
+    path('logarithmic/', views.logarithmicTrend, name='logarithmic-trend'),
+    path('hyperbolic/', views.hyperbolicTrend, name='hyperbolic-trend'),
+    path('smoothing/', views.dataSmoothing, name='smoothing-trend'),
 
     path('without-three-smoothing/', views.movingAveragesWithoutWeightsThree, name='without-three-smoothing'),
     path('without-five-smoothing/', views.movingAveragesWithoutWeightsFive, name='without-five-smoothing'),
