@@ -59,9 +59,6 @@ def dataSmoothing(request):
     return Response({'error': error_message})
 
 
-
-
-    
 @api_view(['POST'])
 def movingAveragesWithoutWeightsThree(request):
     if '.xls' in str(request.FILES['file']):
@@ -71,6 +68,7 @@ def movingAveragesWithoutWeightsThree(request):
     error_message = 'Please, choose the correct file format'
     return Response({'error': error_message})
     
+
 @api_view(['POST'])
 def movingAveragesWithoutWeightsFive(request):
     if '.xls' in str(request.FILES['file']):
@@ -80,6 +78,7 @@ def movingAveragesWithoutWeightsFive(request):
     error_message = 'Please, choose the correct file format'
     return Response({'error': error_message})
     
+
 @api_view(['POST'])
 def movingAveragesWithWeightsThree(request):
     if '.xls' in str(request.FILES['file']):
@@ -88,6 +87,7 @@ def movingAveragesWithWeightsThree(request):
         return Response(data)
     error_message = 'Please, choose the correct file format'
     return Response({'error': error_message})
+    
     
 @api_view(['POST'])
 def movingAveragesWithWeightsFive(request):
