@@ -91,7 +91,7 @@ def smooth_avg(time_row,m):
     temp = time_row[-int(m/2):]
     smooth_row = smooth_row+temp
 
-    return smooth_row
+    return {'data': time_row, 'result': smooth_row}
 
 def getWeight(m):
     if m == 3:
@@ -103,7 +103,7 @@ def smooth_avg_weight(time_row,m):
 
     for column in time_row:
         time_row = [i for i in time_row[column]]
-        
+
     weight = getWeight(m)
 
     smooth_row = []
@@ -117,7 +117,7 @@ def smooth_avg_weight(time_row,m):
     temp = time_row[-int(m/2):]
     smooth_row = smooth_row+temp
 
-    return smooth_row
+    return {'data': time_row, 'result': smooth_row}
 
 # def smooth_exp(time_row):
 #     predictNum = 3
