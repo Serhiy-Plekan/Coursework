@@ -39,7 +39,7 @@ const Result = ({ serverData, selectedMethod }) => {
     },
     grid: {
       row: {
-        colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+        colors: ["#f3f3f3", "transparent"],
         opacity: 0.5,
       },
     },
@@ -59,6 +59,17 @@ const Result = ({ serverData, selectedMethod }) => {
   return (
     <div style={{ marginBottom: 35 }}>
       <Chart options={options} series={series} height={350} />
+      {serverData?.prediction && serverData?.correlation && (
+        <div className="result__wrapper">
+          <span className="result__values">
+            Передбачення: {serverData.prediction}
+          </span>
+
+          <span className="result__values">
+            Кореляція: {serverData.correlation}
+          </span>
+        </div>
+      )}
     </div>
   );
 };
