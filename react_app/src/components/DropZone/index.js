@@ -50,7 +50,7 @@ const DropZone = ({ setFile, file }) => {
         })}
         onClick={onTargetClick}
       >
-        <img src={searchImage} alt="search" />
+        {!file && <img src={searchImage} alt="search" />}
         {file ? "Обрати інший файл" : "Обрати файл"}
         <input
           onChange={onFileInputChange}
