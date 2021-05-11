@@ -2,11 +2,15 @@ import { Table } from "antd";
 import React from "react";
 import "antd/dist/antd.css";
 
-const DataTable = ({ serverData }) => {
-  const dataToShow = {};
+const DataTable = ({ serverData, selectedMethod }) => {
+  let dataToShow = {};
 
   for (let key in serverData) {
     if (typeof serverData[key] === "object") dataToShow[key] = serverData[key];
+  }
+
+  if (selectedMethod === "smoothing") {
+    dataToShow = { data: dataToShow.data, smoothing: dataToShow.smoothing };
   }
 
   const columns = Object.keys(dataToShow).map((key) => ({

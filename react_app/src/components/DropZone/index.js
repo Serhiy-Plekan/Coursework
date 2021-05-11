@@ -56,6 +56,7 @@ const DropZone = ({ setFile, file }) => {
           onChange={onFileInputChange}
           ref={fileInputRef}
           type="file"
+          accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
           className="file-drop__hidden"
         />
       </div>
