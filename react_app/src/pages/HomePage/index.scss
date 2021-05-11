@@ -38,6 +38,7 @@
     color: #29272c;
     display: flex;
     flex-direction: column;
+    width: 375px;
 
     span {
       margin-bottom: 28px;
@@ -60,7 +61,7 @@
   }
 
   &__option {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
 
     &:last-child {
       margin-bottom: 23px;
@@ -72,7 +73,7 @@
     padding: 0 47px;
     background: linear-gradient(97.1deg, #00efe6 0%, #00eb90 100%);
     border-radius: 5px;
-    font-family: 'Nunito';
+    font-family: "Nunito";
     font-weight: bold;
     font-size: 15px;
     line-height: 20px;

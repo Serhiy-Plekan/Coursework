@@ -9,7 +9,7 @@ const App = () => {
   return (
     <HashRouter>
       <div className="container">
-        <SideMenu />
+        {/* <SideMenu /> */}
         {routes}
       </div>
     </HashRouter>
